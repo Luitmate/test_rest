@@ -1,0 +1,4 @@
+com\example\prueba_rest\PruebaRestApplication.class
+com\example\prueba_rest\controllers\ClientController.class
+com\example\prueba_rest\model\Client.class
+com\example\prueba_rest\services\ClientService.class
