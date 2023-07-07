@@ -14,7 +14,31 @@ public class ClientService {
         return clients;
     }
 
+    public Client getClientById(String clientId) {
+        for (Client client : clients) {
+            if (client.getClientId().equals(clientId)) {
+                return client;
+            }
+        }
+        return null;
+    }
+
     public void addClient(Client client) {
         clients.add(client);
+    }
+
+    public void updateClient(String clientId, Client updatedClient) {
+        Client client = getClientById(clientId);
+        if (client != null) {
+            client.setName(updatedClient.getName());
+            client.setEmail(updatedClient.getEmail());
+        }
+    }
+
+    public void deleteClient(String clientId) {
+        Client client = getClientById(clientId);
+        if (client != null) {
+            clients.remove(client);
+        }
     }
 }
